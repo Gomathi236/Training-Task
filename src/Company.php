@@ -64,17 +64,6 @@ public function updateCompany($companyId, $name, $address, $domain)
     return $result;
 }
     
-    // Implement more CRUD operations for the Company class.
-    public function deleteCompany($companyId)
-    {
-        $sql = "DELETE FROM companies WHERE id = ?";
-        $stmt = $this->conn->prepare($sql);
-
-        // Bind parameters and execute the statement
-        $stmt->bind_param("i", $companyId);
-        $result = $stmt->execute();
-
-        return $result;
-    }
+   
 }
 ?>

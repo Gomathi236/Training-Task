@@ -86,18 +86,6 @@ class Resignation
     }
     
 
-    public function approveOrRejectResignation($resignationId, $status, $dateApprovedOrRejected)
-    {
-        $sql = "UPDATE resignations SET status = ?, date_approved_or_rejected = ?, updated_at = NOW() WHERE id = ?";
-        $stmt = $this->conn->prepare($sql);
-
-        // Bind parameters and execute the statement
-        $stmt->bind_param("ssi", $status, $dateApprovedOrRejected, $resignationId);
-        $result = $stmt->execute();
-
-        return $result;
-    }
-
-    // Add more methods as needed for your specific requirements.
+   
 }
 ?>
