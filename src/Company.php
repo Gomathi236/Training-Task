@@ -4,6 +4,8 @@
 namespace App;
 use PDO;
 use PDOException;
+
+
 class Company
 {
     private $conn;

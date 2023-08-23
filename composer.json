@@ -4,5 +4,8 @@
         "App\\": "src"
         
       }
+    },
+    "require": {
+        "fzaninotto/faker": "^1.9"
     }
-  }
+}
