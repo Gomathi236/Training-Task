@@ -14,7 +14,7 @@ class EmployeeController
     public function __construct($db)
     {
         $this->db = $db;
-        $this->helper = new Helper(); //  instance of the Helper class
+        $this->helper = new Helper(); 
     }
 
     public function createEmployee($data)
@@ -56,7 +56,7 @@ class EmployeeController
 
     public function updateEmployee($employeeId, $data)
     {
-        // Validation and process the employee data
+       
         $employee = new Employee($this->db);
         $result = $employee->updateEmployee(
             $employeeId,

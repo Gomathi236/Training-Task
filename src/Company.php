@@ -28,7 +28,6 @@ class Company
         $stmt->execute();
         return true;
     } catch (PDOException $e) {
-        // You might want to handle the exception here if needed
         return false;
     }
 }
@@ -37,12 +36,12 @@ public function listCompanies() {
     $result = $this->conn->query($sql);
 
     if (!$result) {
-        echo "Failed to fetch companies: " . $this->conn->errorInfo()[2]; // Use errorInfo() for PDO
+        echo "Failed to fetch companies: " . $this->conn->errorInfo()[2]; 
         return [];
     }
 
     $companies = [];
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) { // Use PDO::FETCH_ASSOC
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) { 
         $companies[] = $row;
     }
 

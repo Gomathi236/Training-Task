@@ -49,7 +49,6 @@ class JobPosition
         $sql = "UPDATE job_positions SET company_id = :company_id, name = :name, description = :description, job_level = :job_level, updated_at = NOW() WHERE job_position_id = :job_position_id";
         $stmt = $this->conn->prepare($sql);
     
-        // Bind parameters and execute the statement
         $stmt->bindParam(':company_id', $companyId, PDO::PARAM_INT);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':description', $description, PDO::PARAM_STR);

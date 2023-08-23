@@ -14,7 +14,7 @@ class CompanyController
     public function __construct($db)
     {
         $this->db = $db;
-        $this->helper = new Helper(); // Create an instance of the Helper class
+        $this->helper = new Helper();
     }
 
     public function createCompany($data)

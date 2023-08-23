@@ -14,7 +14,6 @@ class Resignation
 
     public function applyResignation($employeeId, $companyId, $status, $dateRequested, $reason)
     {
-        // Check the value of $dateRequested
         var_dump($dateRequested);
 
         $sql = "INSERT INTO resignations (employee_id, company_id, status, date_requested, reason, created_at, updated_at) VALUES (:employee_id, :company_id, :status, :date_requested, :reason, NOW(), NOW())";
@@ -79,7 +78,6 @@ class Resignation
         $stmt->bindValue(':reason', $reason, PDO::PARAM_STR);
         $stmt->bindValue(':resignation_id', $resignationId, PDO::PARAM_INT);
     
-        // Execute the statement
         $result = $stmt->execute();
     
         return $result;

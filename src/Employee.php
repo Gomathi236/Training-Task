@@ -16,13 +16,13 @@ class Employee
 
     public function createEmployee($name, $email, $phone, $address, $dateOfBirth, $onboardDate, $salary, $qualifications, $numOfYearsExp)
     {
-        // Generate a unique ID with a length of 13 characters
+        //  unique ID with a length of 13 characters
         $employeeId = substr(uniqid(), -13);
     
-        // Set default values for company_id, department_id, and job_position_id
-        $companyId = 1; // Assuming you want to set a default company_id, change this value accordingly
-        $departmentId = 1; // Assuming you want to set a default department_id, change this value accordingly
-        $jobPositionId = 1; // Assuming you want to set a default job_position_id, change this value accordingly
+        // default values for company_id, department_id, and job_position_id
+        $companyId = 1;
+        $departmentId = 1; 
+        $jobPositionId = 1; 
     
         $sql = "INSERT INTO employees (employee_id, company_id, department_id, job_position_id, name, email, phone, address, date_of_birth, onboard_date, salary, qualifications, number_of_year_experiences, created_at, updated_at, is_deleted) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW(), ?)";
@@ -30,7 +30,7 @@ class Employee
         try {
             $stmt = $this->conn->prepare($sql);
     
-            // Set is_deleted to 0 (false) explicitly
+            //  is_deleted set to 0 (false) 
             $isDeleted = 0;
     
             // Bind parameters and execute the statement
@@ -38,7 +38,6 @@ class Employee
     
             return true;
         } catch (PDOException $e) {
-            // You might want to handle the exception here if needed
             echo "Failed to create employee. Error: " . $e->getMessage();
             return false;
         }
@@ -76,7 +75,7 @@ public function getEmployeeById($employeeId)
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (!empty($result)) {
-        return $result[0]; // Return the first row
+        return $result[0]; // Returning  first row
     }
     
     return null; // No employee found
